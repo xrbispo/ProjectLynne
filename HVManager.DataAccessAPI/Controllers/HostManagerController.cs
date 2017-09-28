@@ -16,11 +16,24 @@ namespace HVManager.DataAccessAPI.Controllers
 
 
         [HttpGet]
-        public IActionResult List()
+        public IActionResult GetAllHosts()
         {
             var hosts = _repository.GetAllHosts();
 
             return Ok(hosts);
+        }
+
+
+        [HttpGet("{id}")]
+        public IActionResult GetHostByID(int id)
+        {
+            var host = _repository.GetHostByID(id);
+            
+            if(host == null) {
+                return NotFound();
+            }
+
+            return Ok(host);
         }
     }
 }

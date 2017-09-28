@@ -1,5 +1,6 @@
 ﻿using HVManager.DataAccessAPI.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HVManager.DataAccessAPI.Repositories
 {
@@ -14,5 +15,7 @@ namespace HVManager.DataAccessAPI.Repositories
 
         public IEnumerable<BaseHost> GetAllHosts() => _context.Hosts;
 
+        public BaseHost GetHostByID(int id) => _context.Hosts.SingleOrDefault(r => r.HostID == id);
+  
     }
 }
