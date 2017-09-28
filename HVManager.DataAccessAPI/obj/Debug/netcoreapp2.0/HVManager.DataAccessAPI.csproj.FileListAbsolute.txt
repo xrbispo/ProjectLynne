@@ -1,0 +1,11 @@
+R:\Projects\ProjectLynne\HVManager.DataAccessAPI\bin\Debug\netcoreapp2.0\HVManager.DataAccessAPI.deps.json
+R:\Projects\ProjectLynne\HVManager.DataAccessAPI\bin\Debug\netcoreapp2.0\HVManager.DataAccessAPI.runtimeconfig.json
+R:\Projects\ProjectLynne\HVManager.DataAccessAPI\bin\Debug\netcoreapp2.0\HVManager.DataAccessAPI.runtimeconfig.dev.json
+R:\Projects\ProjectLynne\HVManager.DataAccessAPI\bin\Debug\netcoreapp2.0\HVManager.DataAccessAPI.dll
+R:\Projects\ProjectLynne\HVManager.DataAccessAPI\bin\Debug\netcoreapp2.0\HVManager.DataAccessAPI.pdb
+R:\Projects\ProjectLynne\HVManager.DataAccessAPI\obj\Debug\netcoreapp2.0\HVManager.DataAccessAPI.csprojResolveAssemblyReference.cache
+R:\Projects\ProjectLynne\HVManager.DataAccessAPI\obj\Debug\netcoreapp2.0\HVManager.DataAccessAPI.csproj.CoreCompileInputs.cache
+R:\Projects\ProjectLynne\HVManager.DataAccessAPI\obj\Debug\netcoreapp2.0\HVManager.DataAccessAPI.AssemblyInfoInputs.cache
+R:\Projects\ProjectLynne\HVManager.DataAccessAPI\obj\Debug\netcoreapp2.0\HVManager.DataAccessAPI.AssemblyInfo.cs
+R:\Projects\ProjectLynne\HVManager.DataAccessAPI\obj\Debug\netcoreapp2.0\HVManager.DataAccessAPI.dll
+R:\Projects\ProjectLynne\HVManager.DataAccessAPI\obj\Debug\netcoreapp2.0\HVManager.DataAccessAPI.pdb

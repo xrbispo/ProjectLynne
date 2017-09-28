@@ -22,6 +22,7 @@ namespace HVManager.DataAccessAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IHostRepository, HostRepository>();
 
             services.AddMvcCore().AddJsonFormatters();
 
