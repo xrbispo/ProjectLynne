@@ -1,4 +1,5 @@
-﻿using HVManager.DataAccessAPI.Repositories;
+﻿using HVManager.DataAccessAPI.Models;
+using HVManager.DataAccessAPI.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HVManager.DataAccessAPI.Controllers
@@ -34,6 +35,38 @@ namespace HVManager.DataAccessAPI.Controllers
             }
 
             return Ok(host);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult SaveHost([FromRoute] int id, [FromBody] BaseHost host)
+        {
+            TryValidateModel(host);
+            if (!ModelState.IsValid) {
+                return BadRequest(ModelState);
+            }
+
+            if (id != host.HostID)
+            {
+                return BadRequest();
+            }
+
+            _repository.UpdateHost(host);
+
+            return Ok(_repository.GetHostByID(host.HostID));
+        }
+
+        [HttpPost]
+        public IActionResult AddHost([FromBody] BaseHost host)
+        {
+            TryValidateModel(host);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _repository.GetAllHosts();
+            
+            return Ok();
         }
     }
 }

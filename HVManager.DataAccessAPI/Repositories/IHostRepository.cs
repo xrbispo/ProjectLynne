@@ -7,8 +7,7 @@ namespace HVManager.DataAccessAPI.Repositories
     {
         IEnumerable<BaseHost> GetAllHosts();
         BaseHost GetHostByID(int id);
-
-        //void SaveHost(BaseHost host);
-        //void UpdateHost(BaseHost host);
+        void CreateHost(BaseHost host);
+        void UpdateHost(BaseHost host);
     }
 }
