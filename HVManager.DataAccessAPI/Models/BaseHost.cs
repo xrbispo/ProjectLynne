@@ -1,16 +1,18 @@
-﻿using Newtonsoft.Json;
+﻿using HVManager.DataAccessAPI.Extensions;
+using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 
 namespace HVManager.DataAccessAPI.Models
 {
+    [JsonConverter(typeof(HostJsonConverter))]
     public abstract class BaseHost
     {
+
         [Key]
         [JsonProperty(Order = 0)]
-        public int HostID { get; private set; }
+        public int HostID { get; set; }
 
         [JsonProperty(Order = 1)]
-        public string Name { get; private set; }
-
+        public string Name { get; set; }
     }
 }
