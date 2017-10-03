@@ -23,5 +23,4 @@ namespace HVManager.DataAccessAPI.Extensions
             }
         }
     }
-    }
 }
