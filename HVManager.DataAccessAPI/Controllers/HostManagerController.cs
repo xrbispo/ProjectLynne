@@ -1,4 +1,5 @@
-﻿using HVManager.DataAccessAPI.Models;
+﻿using HVManager.DataAccessAPI.Extensions;
+using HVManager.DataAccessAPI.Models;
 using HVManager.DataAccessAPI.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,16 +7,18 @@ namespace HVManager.DataAccessAPI.Controllers
 {
     [Produces("application/json")]
     [Route("api/HostManager")]
+    [ValidateModel]
     public class HostManagerController : Controller
     {
+        // Context 
         private IHostRepository _repository;
-
         public HostManagerController(IHostRepository repo)
         {
             _repository = repo;
         }
 
 
+        // GetAll
         [HttpGet]
         public IActionResult GetAllHosts()
         {
@@ -24,7 +27,7 @@ namespace HVManager.DataAccessAPI.Controllers
             return Ok(hosts);
         }
 
-
+        // GetByID
         [HttpGet("{id}")]
         public IActionResult GetHostByID(int id)
         {
@@ -37,14 +40,28 @@ namespace HVManager.DataAccessAPI.Controllers
             return Ok(host);
         }
 
+
+        // Create
+        [HttpPost]
+        public IActionResult AddHost([FromBody] BaseHost host)
+        {
+
+            var hostname = _repository.GetHostByName(host.Name);
+            if (hostname != null)
+            {
+                //var errorMessage = ("", host.Name);
+                return BadRequest($"The hostname {host.Name.ToUpper()} already exists!");
+            }
+
+            _repository.CreateHost(host);
+            return Ok();
+        }
+
+        // Update
         [HttpPut("{id}")]
         public IActionResult SaveHost([FromRoute] int id, [FromBody] BaseHost host)
         {
-            TryValidateModel(host);
-            if (!ModelState.IsValid) {
-                return BadRequest(ModelState);
-            }
-
+            
             if (id != host.HostID)
             {
                 return BadRequest();
@@ -52,20 +69,6 @@ namespace HVManager.DataAccessAPI.Controllers
 
             _repository.UpdateHost(host);
 
-            return Ok(_repository.GetHostByID(host.HostID));
-        }
-
-        [HttpPost]
-        public IActionResult AddHost([FromBody] BaseHost host)
-        {
-            TryValidateModel(host);
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            _repository.GetAllHosts();
-            
             return Ok();
         }
     }

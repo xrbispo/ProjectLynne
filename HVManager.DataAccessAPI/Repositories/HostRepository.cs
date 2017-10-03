@@ -17,10 +17,12 @@ namespace HVManager.DataAccessAPI.Repositories
         // GetAll
         public IEnumerable<BaseHost> GetAllHosts() => _context.Hosts;
 
-
         // GetByID
         public BaseHost GetHostByID(int id) => _context.Hosts.SingleOrDefault(r => r.HostID == id);
 
+        // GetByName
+        public BaseHost GetHostByName(string name) => _context.Hosts.SingleOrDefault(r => r.Name == name);
+        
         // Create
         public void CreateHost(BaseHost host)
         {
@@ -34,5 +36,7 @@ namespace HVManager.DataAccessAPI.Repositories
             _context.Entry(host).State = EntityState.Modified;
             _context.SaveChanges();
         }
+
+
     }
 }
