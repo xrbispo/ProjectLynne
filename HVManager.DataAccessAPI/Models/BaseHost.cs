@@ -1,5 +1,6 @@
 ﻿using HVManager.DataAccessAPI.Extensions;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace HVManager.DataAccessAPI.Models
@@ -20,5 +21,8 @@ namespace HVManager.DataAccessAPI.Models
 
         [JsonProperty(Order = 5, Required = Required.Always)]
         public int Memory { get; set; }
+
+        [JsonProperty(Order = 6, Required = Required.Always)]
+        public ICollection<Disk> Disks { get; set; }
     }
 }
