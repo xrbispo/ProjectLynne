@@ -11,5 +11,8 @@ namespace HVManager.DataAccessAPI.Repositories
 
         public DbSet<VirtualHost> VirtualHosts { get; set; }
         public DbSet<PhysicalHost> PhysicalHosts { get; set; }
+
+        public DbSet<OS> OS { get; set; }
+
     }
 }

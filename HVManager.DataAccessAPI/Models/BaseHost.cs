@@ -14,5 +14,8 @@ namespace HVManager.DataAccessAPI.Models
 
         [JsonProperty(Order = 1,Required = Required.Always)]
         public string Name { get; set; }
+
+        [JsonProperty(Order = 2, Required = Required.Always)]
+        public OS OS { get; set; }
     }
 }
