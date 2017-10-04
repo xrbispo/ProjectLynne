@@ -40,6 +40,19 @@ namespace HVManager.DataAccessAPI.Controllers
             return Ok(host);
         }
 
+        // GetByName
+        [HttpGet("{hostname}")]
+        public IActionResult GetHostByName(string hostname)
+        {
+            var host = _repository.GetHostByName(hostname);
+
+            if (host == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(host);
+        }
 
         // Create
         [HttpPost]
