@@ -15,13 +15,21 @@ namespace HVManager.DataAccessAPI.Repositories
 
 
         // GetAll
-        public IEnumerable<BaseHost> GetAllHosts() => _context.Hosts.Include(r => r.OS);
+        public IEnumerable<BaseHost> GetAllHosts() => _context.Hosts
+                                                            .Include(r => r.OS)
+                                                            .Include(r => r.Disks);
 
         // GetByID
-        public BaseHost GetHostByID(int id) => _context.Hosts.Include(r => r.OS).SingleOrDefault(r => r.HostID == id);
+        public BaseHost GetHostByID(int id) => _context.Hosts
+                                                            .Include(r => r.OS)
+                                                            .Include(r => r.Disks)
+                                                            .SingleOrDefault(r => r.HostID == id);
 
         // GetByName
-        public BaseHost GetHostByName(string name) => _context.Hosts.Include(r => r.OS).SingleOrDefault(r => r.Name == name);
+        public BaseHost GetHostByName(string name) => _context.Hosts
+                                                            .Include(r => r.OS)
+                                                            .Include(r => r.Disks)
+                                                            .SingleOrDefault(r => r.Name == name);
         
         // Create
         public void CreateHost(BaseHost host)
