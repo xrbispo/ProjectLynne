@@ -28,8 +28,8 @@ namespace HVManager.DataAccessAPI.Controllers
         }
 
         // GetByID
-        [HttpGet("{id}")]
-        public IActionResult GetHostByID(int id)
+        [HttpGet("GetByID/{id}")]
+        public IActionResult GetHostByID([FromRoute] int id)
         {
             var host = _repository.GetHostByID(id);
             
@@ -41,8 +41,8 @@ namespace HVManager.DataAccessAPI.Controllers
         }
 
         // GetByName
-        [HttpGet("{hostname}")]
-        public IActionResult GetHostByName(string hostname)
+        [HttpGet("GetByName/{hostname}")]
+        public IActionResult GetHostByName([FromRoute] string hostname)
         {
             var host = _repository.GetHostByName(hostname);
 
@@ -53,6 +53,7 @@ namespace HVManager.DataAccessAPI.Controllers
 
             return Ok(host);
         }
+
 
         // Create
         [HttpPost]
