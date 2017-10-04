@@ -8,19 +8,21 @@ namespace HVManager.DataAccessAPI.Extensions
     {
         private bool FieldExists(string fieldName, JObject jObject)
         {
-            return jObject[fieldName] != null;
+            var jString = jObject.ToString().ToLower().Replace("\"",string.Empty).Replace(Environment.NewLine,string.Empty);
+            return jString.Contains(fieldName) != false;
         }
 
         protected override BaseHost Create(Type objectType, JObject jObject)
         {
-            if (FieldExists("CPU", jObject))
+            if (FieldExists("cpu:", jObject))
             {
                 return new VirtualHost();
             }
-            else
+            else 
             {
                 return new PhysicalHost();
             }
+            
         }
     }
 }

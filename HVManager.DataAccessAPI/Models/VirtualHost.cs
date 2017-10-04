@@ -5,8 +5,8 @@ namespace HVManager.DataAccessAPI.Models
 {
     public class VirtualHost :BaseHost
     {
-        [JsonProperty(Order = 2)]
-        public int CPU { get; private set; }
+        [JsonProperty(Order = 2,Required = Required.Always)]
+        public int CPU { get; set; }
 
     }
 }

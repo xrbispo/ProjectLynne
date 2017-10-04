@@ -5,10 +5,10 @@ namespace HVManager.DataAccessAPI.Models
 {
     public class PhysicalHost :BaseHost
     {
-        [JsonProperty(Order = 2)]
-        public int Sockets { get; private set; }
+        [JsonProperty(Order = 2, Required = Required.Always)]
+        public int Sockets { get; set; }
 
-        [JsonProperty(Order = 3)]
-        public int CoresPerSocket { get; private set; }
+        [JsonProperty(Order = 3, Required = Required.Always)]
+        public int CoresPerSocket { get; set; }
     }
 }
