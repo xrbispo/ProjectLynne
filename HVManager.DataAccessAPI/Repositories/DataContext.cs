@@ -14,6 +14,8 @@ namespace HVManager.DataAccessAPI.Repositories
 
         public DbSet<OS> OS { get; set; }
         public DbSet<Disk> Disks { get; set; }
-
+        public DbSet<Network> Networks { get; set; }
+        public DbSet<Vlan> Vlans { get; set; }
+ 
     }
 }
