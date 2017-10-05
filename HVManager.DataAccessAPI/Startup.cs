@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using HVManager.DataAccessAPI.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace HVManager.DataAccessAPI
 {
@@ -24,7 +25,8 @@ namespace HVManager.DataAccessAPI
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IHostRepository, HostRepository>();
 
-            services.AddMvcCore().AddJsonFormatters();
+            services.AddMvcCore().AddJsonFormatters()
+                                 .AddJsonOptions(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);            
 
         }
 
