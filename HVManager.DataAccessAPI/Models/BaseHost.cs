@@ -36,5 +36,8 @@ namespace HVManager.DataAccessAPI.Models
         [JsonProperty(Order = 9, Required = Required.Always)]
         public Client Client { get; set; }
 
+        [JsonProperty(Order = 10, Required = Required.Always)]
+        public Team Team { get; set; }
+
     }
 }
