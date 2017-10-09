@@ -7,7 +7,7 @@ namespace HVManager.DataAccessAPI.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int VlanID { get; set; }
 
-        public string Name { get; set; }
+        public string Description { get; set; }
 
         public string Subnet { get; set; }
 
