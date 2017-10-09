@@ -19,24 +19,16 @@ namespace HVManager.DataAccessAPI.Repositories
                                                             .Include(r => r.OS)
                                                             .Include(r => r.Disks)
                                                             .Include(r => r.Networks).ThenInclude(r => r.Vlan)
-                                                            .Include(r => r.Product);
+                                                            .Include(r => r.Product)
+                                                            .Include(r => r.Client);
                                                             
 
         // GetByID
-        public BaseHost GetHostByID(int id) => _context.Hosts
-                                                            .Include(r => r.OS)
-                                                            .Include(r => r.Disks)
-                                                            .Include(r => r.Networks).ThenInclude(r => r.Vlan)
-                                                            .Include(r => r.Product)
-                                                            .SingleOrDefault(r => r.HostID == id);
+        public BaseHost GetHostByID(int id) => GetAllHosts().SingleOrDefault(r => r.HostID == id);
+
 
         // GetByName
-        public BaseHost GetHostByName(string name) => _context.Hosts
-                                                            .Include(r => r.OS)
-                                                            .Include(r => r.Disks)
-                                                            .Include(r => r.Networks).ThenInclude(r => r.Vlan)
-                                                            .Include(r => r.Product)
-                                                            .SingleOrDefault(r => r.Name == name);
+        public BaseHost GetHostByName(string name) => GetAllHosts().SingleOrDefault(r => r.Name == name);
         
         // Create
         public void CreateHost(BaseHost host)
