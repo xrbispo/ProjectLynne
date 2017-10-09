@@ -8,5 +8,7 @@
 
         public string IP { get; set; }
         public string MAC { get; set; }
+
+        public BaseHost Host { get; set; }
     }
 }
