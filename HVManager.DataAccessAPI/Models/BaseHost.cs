@@ -30,5 +30,8 @@ namespace HVManager.DataAccessAPI.Models
         [JsonProperty(Order = 7, Required = Required.Always)]
         public ICollection<Network> Networks { get; set; }
 
+        [JsonProperty(Order = 8, Required = Required.Always)]
+        public Product Product { get; set; }
+
     }
 }
