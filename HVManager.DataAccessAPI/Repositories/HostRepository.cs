@@ -20,7 +20,8 @@ namespace HVManager.DataAccessAPI.Repositories
                                                             .Include(r => r.Disks)
                                                             .Include(r => r.Networks).ThenInclude(r => r.Vlan)
                                                             .Include(r => r.Product)
-                                                            .Include(r => r.Client);
+                                                            .Include(r => r.Client)
+                                                            .Include(r => r.Team);
                                                             
 
         // GetByID
