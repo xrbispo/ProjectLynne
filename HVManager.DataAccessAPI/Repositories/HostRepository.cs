@@ -18,13 +18,16 @@ namespace HVManager.DataAccessAPI.Repositories
         public IEnumerable<BaseHost> GetAllHosts() => _context.Hosts
                                                             .Include(r => r.OS)
                                                             .Include(r => r.Disks)
-                                                            .Include(r => r.Networks).ThenInclude(r => r.Vlan);
+                                                            .Include(r => r.Networks).ThenInclude(r => r.Vlan)
+                                                            .Include(r => r.Product);
+                                                            
 
         // GetByID
         public BaseHost GetHostByID(int id) => _context.Hosts
                                                             .Include(r => r.OS)
                                                             .Include(r => r.Disks)
                                                             .Include(r => r.Networks).ThenInclude(r => r.Vlan)
+                                                            .Include(r => r.Product)
                                                             .SingleOrDefault(r => r.HostID == id);
 
         // GetByName
@@ -32,6 +35,7 @@ namespace HVManager.DataAccessAPI.Repositories
                                                             .Include(r => r.OS)
                                                             .Include(r => r.Disks)
                                                             .Include(r => r.Networks).ThenInclude(r => r.Vlan)
+                                                            .Include(r => r.Product)
                                                             .SingleOrDefault(r => r.Name == name);
         
         // Create
