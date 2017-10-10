@@ -19,7 +19,7 @@ namespace HVManager.DataAccessAPI.Repositories
         public DbSet<Product> Products { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Team> Teams { get; set; }
-        public DbSet<HardwareModel> HWModels { get; set; }
+        public DbSet<HardwareModel> HardwareModels { get; set; }
 
 
     }

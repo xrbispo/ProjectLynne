@@ -16,8 +16,6 @@ namespace HVManager.DataAccessAPI.Models
         //public Rack Rack { get; set; }
 
         [JsonProperty(Order = 12, Required = Required.Always)]
-        [StringLength(20, MinimumLength = 7, ErrorMessage = "Serial/ServiceTag must have between 7 and 20 characters")]
-        [Display(Name = "Serial/ServiceTag")]
-        public HardwareModel Model { get; set; }
+        public HardwareModel HardwareModel { get; set; }
     }
 }
