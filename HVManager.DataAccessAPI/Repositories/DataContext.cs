@@ -20,6 +20,7 @@ namespace HVManager.DataAccessAPI.Repositories
         public DbSet<Client> Clients { get; set; }
         public DbSet<Team> Teams { get; set; }
         public DbSet<HardwareModel> HardwareModels { get; set; }
+        public DbSet<Datacenter> Datacenters { get; set; }
 
 
     }
