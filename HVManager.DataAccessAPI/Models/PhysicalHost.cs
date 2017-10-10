@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HVManager.DataAccessAPI.Models
 {
-    public class PhysicalHost :BaseHost
+    public abstract class PhysicalHost :BaseHost
     {
         [JsonProperty(Order = 3, Required = Required.Always)]
         public int Sockets { get; set; }
