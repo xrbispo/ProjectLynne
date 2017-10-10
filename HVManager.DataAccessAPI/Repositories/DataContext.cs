@@ -11,6 +11,7 @@ namespace HVManager.DataAccessAPI.Repositories
 
         public DbSet<VirtualHost> VirtualHosts { get; set; }
         public DbSet<PhysicalHost> PhysicalHosts { get; set; }
+        public DbSet<RackServer> RackServers { get; set; }
 
         public DbSet<OS> OS { get; set; }
         public DbSet<Disk> Disks { get; set; }
@@ -21,6 +22,7 @@ namespace HVManager.DataAccessAPI.Repositories
         public DbSet<Team> Teams { get; set; }
         public DbSet<HardwareModel> HardwareModels { get; set; }
         public DbSet<Datacenter> Datacenters { get; set; }
+        public DbSet<Rack> Racks { get; set; }
 
 
     }
