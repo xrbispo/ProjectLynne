@@ -11,7 +11,7 @@ namespace HVManager.DataAccessAPI.Models
         public int ProductID { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "Product name must have between 3 and 20 characters")]
+        [StringLength(20, MinimumLength = 3)]
         [Display(Name = "Product Name")]
         public string Name { get; set; }
     }

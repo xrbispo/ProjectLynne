@@ -24,16 +24,18 @@ namespace HVManager.DataAccessAPI.Models
 
         [JsonProperty(Order = 13, Required = Required.Always)]
         [Required]
-        [StringLength(20, MinimumLength = 7, ErrorMessage = "Serial/ServiceTag must have between 7 and 20 characters")]
+        [StringLength(20, MinimumLength = 7)]
         [Display(Name = "Serial/ServiceTag")]
         public string Serial { get; set; }
 
         [JsonProperty(Order = 14, Required = Required.Always)]
         [Required]
+        [RegularExpression(@"^([0-9A-Fa-f]{2}:){7}[0-9A-Fa-f]{2}$", ErrorMessage = "WWPN Address must be in this format 10:00:00:00:c9:2e:e8:90")]
         public string WWPN1 { get; set; }
 
         [JsonProperty(Order = 15, Required = Required.Always)]
         [Required]
+        [RegularExpression(@"^([0-9A-Fa-f]{2}:){7}[0-9A-Fa-f]{2}$", ErrorMessage = "WWPN Address must be in this format 10:00:00:00:c9:2e:e8:90")]
         public string WWPN2 { get; set; }   
     }
 }

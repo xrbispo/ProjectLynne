@@ -16,7 +16,7 @@ namespace HVManager.DataAccessAPI.Models
 
         [JsonProperty(Order = 1,Required = Required.Always)]
         [Required]
-        [StringLength(15, MinimumLength = 3, ErrorMessage = "Name must have between 3 and 15 characters")]
+        [StringLength(15, MinimumLength = 3)]
         public string Name { get; set; }
 
         [JsonProperty(Order = 2, Required = Required.Always)]

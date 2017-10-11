@@ -8,7 +8,7 @@ namespace HVManager.DataAccessAPI.Models
         public int RackID { get; set; }
 
         [Required]
-        [StringLength(3, MinimumLength = 3, ErrorMessage = "Rack number/FI Domain must constain between 3 and 15 characters")]
+        [StringLength(3, MinimumLength = 3)]
         [Display(Name = "RackNumber/FI Domain")]
         public string Number { get; set; }
     }

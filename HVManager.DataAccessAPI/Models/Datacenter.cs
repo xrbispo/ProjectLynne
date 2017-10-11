@@ -7,7 +7,7 @@ namespace HVManager.DataAccessAPI.Models
         public int DatacenterID { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "Datacenter name must have between 3 and 20 characters")]
+        [StringLength(20, MinimumLength = 3)]
         [Display(Name = "Datacenter Name")]
         public string Name { get; set; }
     }

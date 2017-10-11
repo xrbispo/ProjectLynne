@@ -7,13 +7,13 @@ namespace HVManager.DataAccessAPI.Models
         public int TeamID { get; set; }
 
         [Required]
-        [StringLength(30, MinimumLength = 5, ErrorMessage = "Team name must have between 5 and 30 characters")]
+        [StringLength(30, MinimumLength = 5)]
         [Display(Name = "Team Name")]
         public string Name { get; set; }
 
         [Required]
         [EmailAddress(ErrorMessage = "E-mail address invalid")]
-        [StringLength(50, MinimumLength = 10, ErrorMessage = "E-mail address must have between 10 and 50 characters")]
+        [StringLength(50, MinimumLength = 10)]
         [Display(Name = "Team e-mail address")]
         public string Email { get; set; }
 
