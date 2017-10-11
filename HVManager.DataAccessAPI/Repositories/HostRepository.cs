@@ -23,8 +23,7 @@ namespace HVManager.DataAccessAPI.Repositories
                                                             .Include(r => r.Client)
                                                             .Include(r => r.Team)
                                                             .Include((PhysicalHost r) => r.HardwareModel)
-                                                            .Include((VirtualHost r) => r.Datacenter)
-                                                            .Include((RackServer r) => r.Rack);
+                                                            .Include((VirtualHost r) => r.Datacenter);
                                                             
                                                             
 

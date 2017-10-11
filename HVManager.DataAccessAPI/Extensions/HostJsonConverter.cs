@@ -20,7 +20,7 @@ namespace HVManager.DataAccessAPI.Extensions
             }
             else 
             {
-                return new RackServer();
+                return new PhysicalHost();
             }
             
         }
