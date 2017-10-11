@@ -24,8 +24,8 @@ namespace HVManager.DataAccessAPI.Models
         public OS OS { get; set; }
 
         [JsonProperty(Order = 5, Required = Required.Always)]
-        [Range(1, 768, ErrorMessage = "Memory size must be between 1GB and 768GB")]
         [Required]
+        [Display(Name = "Memory(GB)")]
         public int Memory { get; set; }
 
         [JsonProperty(Order = 6, Required = Required.Always)]

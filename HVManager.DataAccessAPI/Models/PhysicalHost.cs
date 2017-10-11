@@ -8,12 +8,10 @@ namespace HVManager.DataAccessAPI.Models
     {
         [JsonProperty(Order = 3, Required = Required.Always)]
         [Required]
-        [Range(1, 4, ErrorMessage = "Sockets must be between 1 and 4")]
         public int Sockets { get; set; }
 
         [JsonProperty(Order = 4, Required = Required.Always)]
         [Required]
-        [Range(2, 28, ErrorMessage = "Cores must be between 2 and 28 per socket")]
         public int CoresPerSocket { get; set; }
 
         [JsonProperty(Order = 11, Required = Required.Always)]

@@ -9,6 +9,7 @@ namespace HVManager.DataAccessAPI.Models
         public int VlanID { get; set; }
 
         [Required]
+        [StringLength(40, MinimumLength = 3, ErrorMessage = "Description must have between 3 and 40 characters")]
         public string Description { get; set; }
 
         [Required]
