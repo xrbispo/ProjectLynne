@@ -5,6 +5,7 @@ namespace HVManager.DataAccessAPI.Models
     public class Client
     {
 
+        [Required]
         [StringLength(6, MinimumLength = 6, ErrorMessage = "Client ID must have 6 characters that includes numbers and letters")]
         public string ClientID { get; set; }
 
