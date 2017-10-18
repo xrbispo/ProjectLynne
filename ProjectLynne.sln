@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HVManager.DataAccessAPI", "HVManager.DataAccessAPI\HVManager.DataAccessAPI.csproj", "{50A0B388-71F3-4ACB-BB43-35EA2CCF7453}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HVManager.DataAccessAPI", "HVManager.DataAccessAPI\HVManager.DataAccessAPI.csproj", "{50A0B388-71F3-4ACB-BB43-35EA2CCF7453}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HVManager.WebUI", "HVManager.WebUI\HVManager.WebUI.csproj", "{ABE9C68C-D33B-4BF3-BB10-7D7359E4C672}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{50A0B388-71F3-4ACB-BB43-35EA2CCF7453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50A0B388-71F3-4ACB-BB43-35EA2CCF7453}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50A0B388-71F3-4ACB-BB43-35EA2CCF7453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE9C68C-D33B-4BF3-BB10-7D7359E4C672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE9C68C-D33B-4BF3-BB10-7D7359E4C672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE9C68C-D33B-4BF3-BB10-7D7359E4C672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE9C68C-D33B-4BF3-BB10-7D7359E4C672}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
