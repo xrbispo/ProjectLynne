@@ -3,3 +3,5 @@
 ################################################################################
 
 /HVManager.DataAccessAPI/Migrations
+/HVManager.WebUI/obj/Debug
+/HVManager.WebUI/bin
