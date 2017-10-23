@@ -15,4 +15,5 @@
 *** This is my first dev project, i'm a infrastructure guy so dont mind the possible bad coding, all help will be welcome =D ***
 
 
-v1.0 -> Building webAPI for data access. Hosts repository. (asp.net core 2.0)
+v1.0 -> Building WebAPI for data access. Hosts repository. (asp.net core 2.0)
+v1.1 -> Building WebUI to consume de WebAPI. (angular 4) 
