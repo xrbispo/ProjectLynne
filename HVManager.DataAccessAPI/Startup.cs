@@ -24,6 +24,7 @@ namespace HVManager.DataAccessAPI
         {
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IHostRepository, HostRepository>();
+            services.AddTransient<IOSRepository, OSRepository>();
 
             services.AddCors();
 
