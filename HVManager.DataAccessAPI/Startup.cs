@@ -25,6 +25,8 @@ namespace HVManager.DataAccessAPI
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IHostRepository, HostRepository>();
 
+            services.AddCors();
+
             services.AddMvcCore().AddJsonFormatters()
                                  .AddJsonOptions(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);            
 
@@ -37,6 +39,8 @@ namespace HVManager.DataAccessAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(options => options.AllowAnyOrigin());
 
             app.UseMvc();
         }
