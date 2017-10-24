@@ -1,35 +1,40 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-        <strong>HVManager</strong>
-    </a>
+  <a class="navbar-brand" href="#">
+    <strong>HVManager</strong>
+  </a>
+  <a class="badge badge-pill badge-light" routerLink="/admin/host" routerLinkActive="active">
+    HostEditor
+  </a>
 </nav>
 
-<div class="container">
 
-    <div *ngFor="let host of data" class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-        <div class="card-header">
-            <h5>{{host.name}}</h5>
+<section class="container-fluid">
+  <div class="row">
+    <div *ngFor="let host of data" class="card text-white bg-success m-3 border-dark" style="width: 22rem;">
+      <h6 class="card-header">
+        {{host.name}}
+        <span *ngIf="host.cpu == null; else VirtualHost" class="float-right badge badge-pill badge-light">Physical</span>
+        <ng-template #VirtualHost>
+          <span class="float-right badge badge-pill badge-light">Virtual</span>
+        </ng-template>
+      </h6>
+      <div class="card-body text-dark bg-light">
+        <div class="card-title">
+          <strong>O.S.:</strong> {{host.os.name}}
         </div>
-        <div class="card-body bg-dark">
-            <div class="card-title">
-                <strong>O.S.:</strong> {{host.os.name}}
-            </div>
-
-            <div *ngIf="host.cpu != null " class="card-title">
-                <strong>CPU:</strong> {{host.cpu}}
-            </div>
-
-            <div *ngIf="host.cpu == null " class="card-title">
-                <strong>Sockets:</strong> {{host.sockets}}  
-                <strong>Cores:</strong> {{host.coresPerSocket}}
-            </div>
-
-            <div class="card-title">
-                <strong>Memory:</strong> {{host.memory}}GB
-            </div>
-            <div class="card-title">
-                <strong>Product:</strong> {{host.product.name}}
-            </div>
+        <div *ngIf="host.cpu != null " class="card-title">
+          <img src="../assets/images/cpu.png" style="width: 32px;" /> {{host.cpu}}
         </div>
+        <div *ngIf="host.cpu == null " class="card-title">
+          <img src="../assets/images/cpu.png" style="width: 32px;" /> {{host.sockets}} / {{host.coresPerSocket}}
+        </div>
+        <div class="card-title">
+          <img src="../assets/images/memory.png" style="width: 32px;" /> {{host.memory}}GB
+        </div>
+        <div class="card-title">
+          <strong>Product:</strong> {{host.product.name}}
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
