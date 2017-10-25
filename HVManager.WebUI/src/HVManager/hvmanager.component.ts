@@ -10,19 +10,22 @@ import "rxjs/add/operator/map";
 
 export class HVManagerComponent {
 
-    private apiUrl = 'http://localhost:55596/api/HostManager'
-    data: any = [];
+  private apiUrlHost = 'http://localhost:55596/api/HostManager'
+
+    dataHost: any = [];
 
     constructor(private http: Http) {
-        this.getHosts();
+      this.getHosts();
     }
 
     getHosts() {
-        return this.http.get(this.apiUrl)
+        return this.http.get(this.apiUrlHost)
             .map((res: Response) => res.json())
-            .subscribe(data => {
-                this.data = data;
-                console.log(this.data);
+            .subscribe(dataHost => {
+                this.dataHost = dataHost;
+                console.log(this.dataHost);
             })
     }
+
+
 }

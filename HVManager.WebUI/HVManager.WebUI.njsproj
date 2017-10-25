@@ -38,9 +38,7 @@
     <Content Include="obj\Debug\HVManager.WebUI.njsproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\HVManager.WebUI.njsprojResolveAssemblyReference.cache" />
     <Content Include="package.json" />
-    <Content Include="src\admin\hostEditor.component">
-      <SubType>Code</SubType>
-    </Content>
+    <Content Include="src\admin\hostEditor.component.html" />
     <Content Include="src\app\app.component.html" />
     <Content Include="src\assets\.gitkeep" />
     <Content Include="src\assets\images\linux.png" />
@@ -75,6 +73,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
     <TypeScriptCompile Include="e2e\app.po.ts" />
+    <TypeScriptCompile Include="src\admin\hostEditor.component.ts" />
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />

@@ -1,0 +1,53 @@
+<form novalidate #form="ngForm" (ngSubmit)="save(form)">
+
+  <div class="form-group">
+    <label>O.S.</label>
+    <select>
+      <option value="0">--Select--</option>
+      <option *ngFor="let os of dataOS" value={{os.osid}}>
+        {{os.name}}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Datacenter</label>
+    <select>
+      <option value="0">--Select--</option>
+      <option *ngFor="let datacenter of dataDatacenter" value={{datacenter.datacenterid}}>
+        {{datacenter.name}}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Product</label>
+    <select>
+      <option value="0">--Select--</option>
+      <option *ngFor="let product of dataProduct" value={{product.productid}}>
+        {{product.name}}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Client</label>
+    <select>
+      <option value="0">--Select--</option>
+      <option *ngFor="let client of dataClient" value={{client.clientid}}>
+        {{client.name}}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Team</label>
+    <select>
+      <option value="0">--Select--</option>
+      <option *ngFor="let team of dataTeam" value={{team.teamid}}>
+        {{team.name}}
+      </option>
+    </select>
+  </div>
+
+</form>

@@ -2,7 +2,7 @@
   <a class="navbar-brand" href="#">
     <strong>HVManager</strong>
   </a>
-  <a class="badge badge-pill badge-light" routerLink="/admin/host" routerLinkActive="active">
+  <a class="badge badge-pill badge-danger" routerLink="/admin/host" routerLinkActive="active">
     HostEditor
   </a>
 </nav>
@@ -10,7 +10,7 @@
 
 <section class="container-fluid">
   <div class="row">
-    <div *ngFor="let host of data" class="card text-white bg-success m-3 border-dark" style="width: 22rem;">
+    <div *ngFor="let host of dataHost" class="card text-white bg-success m-3 border-dark" style="width: 22rem;">
       <h6 class="card-header">
         {{host.name}}
         <span *ngIf="host.cpu == null; else VirtualHost" class="float-right badge badge-pill badge-light">Physical</span>
