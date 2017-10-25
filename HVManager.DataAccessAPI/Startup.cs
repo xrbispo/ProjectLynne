@@ -26,6 +26,7 @@ namespace HVManager.DataAccessAPI
             services.AddTransient<IHostRepository, HostRepository>();
             services.AddTransient<IOSRepository, OSRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IClientRepository, ClientRepository>();
 
 
             services.AddCors();
