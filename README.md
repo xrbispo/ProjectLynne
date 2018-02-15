@@ -1,4 +1,4 @@
-# ProjectLynne
+# ProjectLynne (Discontinued)
 << HVManager - Hardware and Virtualization Manager >>
 
 - Web application that controls all the daily tasks performed by the team in charge of hardware and virtualization of the datacenter
